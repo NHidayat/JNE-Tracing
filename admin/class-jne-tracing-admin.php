@@ -51,9 +51,15 @@ class Jne_Tracing_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		add_action( 'init', array( $this, 'includes' ) );
 
 	}
 
+	public function includes() {
+		include_once __DIR__ . '/class-jne-tracing-menus.php';
+	}
+
+	
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
@@ -61,18 +67,7 @@ class Jne_Tracing_Admin {
 	 */
 	public function enqueue_styles() {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Jne_Tracing_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Jne_Tracing_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
+		wp_enqueue_style( 'bxi', 'https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css');
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/jne-tracing-admin.css', array(), $this->version, 'all' );
 
 	}
@@ -83,18 +78,6 @@ class Jne_Tracing_Admin {
 	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Jne_Tracing_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Jne_Tracing_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/jne-tracing-admin.js', array( 'jquery' ), $this->version, false );
 

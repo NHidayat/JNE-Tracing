@@ -1,4 +1,179 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.alert-success {
+  font-weight: 500;
+  color: #0f5132;
+  border: 1px solid #c3c4c7;
+  border-left: 4px solid #d63638;
+}
+
+.alert svg {
+  margin-right: 15px;
+}
+
+body {
+  background: #f0f0f1 !important;
+  font-size: 13px !important;
+}
+
+h2,
+h3 {
+  font-size: initial !important;
+}
+
+.page-title {
+  margin-bottom: 1rem !important;
+}
+
+.main-content {
+  display: flex;
+}
+
+.box {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid rgb(226, 228, 231);
+}
+
+.box-center {
+  margin: 0 auto;
+  min-width: 320px;
+}
+
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(226, 228, 231);
+  padding: 25px 20px;
+}
+
+.box-header .box-title {
+  margin: 0;
+}
+
+.box-body {
+  padding: 20px;
+}
+
+.package-header {
+  margin: 2rem 0 0 0 !important;
+}
+
+.package-info .package-header .package-detail {
+  display: flex;
+  margin-bottom: 1rem !important;
+}
+
+.package-info .package-header .package-detail > div {
+  flex: 3;
+  border-left: 3px solid #c3c4c7;
+  padding-left: 15px;
+}
+
+.package-info .package-header .package-detail > div > * {
+  display: block;
+}
+
+.package-info .history-list {
+  position: relative;
+}
+
+.package-info .history-list .history-item {
+  display: block;
+  position: relative;
+  margin: 1.5rem 0;
+  padding-left: 30px;
+  color: #757575;
+}
+
+.history-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background: #c3c4c7;
+}
+
+.history-item::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 11px;
+  width: 2px;
+  height: 200%;
+  border-radius: 10px;
+  background: #c3c4c7;
+}
+
+.history-item:last-child::after {
+  position: relative;
+}
+
+.history-item:first-child:before,
+.history-item:first-child::after {
+  background: #a6ca7d;
+}
+
+.history-item:first-child {
+  color: #3c434a !important;
+}
+
+.package-info .history-list .history-item .date {
+  display: block;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.image-section {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.image-section .msg {
+  font-size: 1.2em;
+  color: #8a8a8a;
+}
+
+.jne-form .form-group label {
+  font-weight: 400;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.jne-form .form-group input {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+@media (max-width: 425px) {
+  .box-header {
+    display: block;
+    text-align: center;
+  }
+
+  .box-header > div {
+    margin: 10px 0;
+  }
+
+  .package-info .package-header .package-detail {
+    flex-direction: column;
+  }
+
+  .package-info .package-header .package-detail > div {
+    margin: 8px 0;
+  }
+}
