@@ -61,10 +61,10 @@
     <div class="package-info box">
         <div class="box-header">
             <div class="logo">
-                <img src="<?= plugin_dir_url(__FILE__) . '../img/logo.png'; ?>" alt="jne logo" width="100px">
+                <img src="<?php echo plugin_dir_url(__FILE__) . '../img/logo.png'; ?>" alt="jne logo" width="100px">
             </div>
             <div class="main-form">
-                <form method="POST" action="<?= site_url('/wp-admin/admin.php?page=jne-tracing'); ?>">
+                <form method="POST" action="<?php echo site_url('/wp-admin/admin.php?page=jne-tracing'); ?>">
                     <input type="text" placeholder="Enter the note number" name="awb" value="4808012000000159" class="form-control"/>
                     <button name="submit" value="submit" class="button button-primary">Search</button>
                 </form>
@@ -80,25 +80,25 @@
             <h3>Detail</h3>
                 <div class="package-detail">
                     <div>
-                        <h3><?= $cnote['cnote_no']; ?></h3>
-                        <span><i class="bx bx-calendar"></i> <?= $cnote['cnote_date']; ?></span>
-                        <span><i class="bx bx-box"></i> <?= $cnote['cnote_weight']; ?> Kg</span>
+                        <h3><?php echo $cnote['cnote_no']; ?></h3>
+                        <span><i class="bx bx-calendar"></i> <?php echo $cnote['cnote_date']; ?></span>
+                        <span><i class="bx bx-box"></i> <?php echo $cnote['cnote_weight']; ?> Kg</span>
                     </div>
                     <div>
                         <strong>From</strong>
-                        <span><?= $cnote['cnote_shipper_name']; ?></span>
-                        <span><?= $cnote['cnote_shipper_addr1']; ?></span>
-                        <span><?= $cnote['cnote_shipper_addr2']; ?></span>
-                        <span><?= $cnote['cnote_shipper_addr3']; ?></span>
-                        <span><?= $cnote['cnote_shipper_city']; ?></span>
+                        <span><?php echo $cnote['cnote_shipper_name']; ?></span>
+                        <span><?php echo $cnote['cnote_shipper_addr1']; ?></span>
+                        <span><?php echo $cnote['cnote_shipper_addr2']; ?></span>
+                        <span><?php echo $cnote['cnote_shipper_addr3']; ?></span>
+                        <span><?php echo $cnote['cnote_shipper_city']; ?></span>
                     </div>
                     <div>
                         <strong>To</strong>
-                        <span><?= $cnote['cnote_receiver_name']; ?></span>
-                        <span><?= $cnote['cnote_receiver_addr1']; ?></span>
-                        <span><?= $cnote['cnote_receiver_addr2']; ?></span>
-                        <span><?= $cnote['cnote_receiver_addr3']; ?></span>
-                        <span><?= $cnote['cnote_receiver_city']; ?></span>
+                        <span><?php echo $cnote['cnote_receiver_name']; ?></span>
+                        <span><?php echo $cnote['cnote_receiver_addr1']; ?></span>
+                        <span><?php echo $cnote['cnote_receiver_addr2']; ?></span>
+                        <span><?php echo $cnote['cnote_receiver_addr3']; ?></span>
+                        <span><?php echo $cnote['cnote_receiver_city']; ?></span>
                     </div>
                 </div>
             </div>
@@ -107,8 +107,8 @@
                 <div class="history-list">
                     <?php foreach(array_reverse($result['history']) as $history): ?>
                         <div class="history-item">
-                            <span class="date"><?= $history['date']; ?></span>
-                            <span><?= $history['desc']; ?>.</span>
+                            <span class="date"><?php echo $history['date']; ?></span>
+                            <span><?php echo $history['desc']; ?>.</span>
                         </div>
                     <?php endforeach ?>
                 </div>
@@ -117,10 +117,10 @@
             <?php if(!empty($result['error'])): ?>
                 <div class="image-section">
                     <div class="image-wrap">
-                        <img src="<?= plugin_dir_url(__FILE__) . '../img/error.jpg'; ?>" alt="">
+                        <img src="<?php echo plugin_dir_url(__FILE__) . '../img/error.jpg'; ?>" alt="">
                     </div>
                     <div class="msg">
-                        <?= $result['error']; ?>
+                        <?php echo $result['error']; ?>
                     </div>
                 </div>
             <?php endif; ?>

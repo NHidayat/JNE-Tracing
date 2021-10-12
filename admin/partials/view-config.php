@@ -18,6 +18,7 @@
         $formData = [
             'api_key' => $_POST['api_key'],
             'username' => $_POST['username'],
+            'uat' => current_time('mysql')
         ];
         $wpdb->update($wpdb->prefix . 'jne_tracing_api', $formData, ['api_id' => $result[0]->api_id]);
         $status = 1;
@@ -49,18 +50,18 @@
                 </div>  
                 <?php endif; ?>              
                 <div class="jne-form">
-                    <form action="<?= site_url('/wp-admin/admin.php?page=jne-tracing-config'); ?>" method="POST">
+                    <form action="<?php echo site_url('/wp-admin/admin.php?page=jne-tracing-config'); ?>" method="POST">
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" name="username" id="username" value="<?= $data ? $data->username : ''; ?>" required>
+                            <input type="text" name="username" id="username" value="<?php echo $data ? $data->username : ''; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="api">API Key</label>
-                            <input type="text" name="api_key" id="api"  value="<?= $data ? $data->api_key : ''; ?>" required>
+                            <input type="text" name="api_key" id="api"  value="<?php echo $data ? $data->api_key : ''; ?>" required>
                             <input type="hidden" name="success" value="success">
                         </div>
                         <div>
-                            <button class="button button-primary" name="submit" value="<?= $data ? 'update' : 'submit'; ?>" >Save</button>
+                            <button class="button button-primary" name="submit" value="<?php echo $data ? 'update' : 'submit'; ?>" >Save</button>
                         </div>
                     </form>
                 </div>
