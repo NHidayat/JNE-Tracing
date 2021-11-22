@@ -38,8 +38,6 @@ class Jne_Tracing_Activator {
 			self::app_create_jne_tracing_api_db();
 			update_option('db_jne_tracing_api_version', $current_db_version);
 		}
-
-
 	}
 
 	protected static function app_create_jne_tracing_api_db() {
@@ -56,7 +54,6 @@ class Jne_Tracing_Activator {
 			)"
 		);
 
-		// execute query
 		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 		dbDelta($query);
 

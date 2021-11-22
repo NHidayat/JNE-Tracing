@@ -13,12 +13,16 @@ class TP_Admin_Menus {
     }
     
     public function add_menu() {
+        $icon = plugin_dir_url(__FILE__) . '/img/menu-icon20.png';
+        
         add_menu_page(
             'JNE Tracing',              // Page title
             'JNE Tracing',              // Menu Title
             'manage_options',           // Capability
             'jne-tracing',             // Page slug 
-            array($this, 'page_tracing')              // function
+            array($this, 'page_tracing'),              // function
+            $icon,
+            '55.5'              // Position
         );
     
         add_submenu_page(

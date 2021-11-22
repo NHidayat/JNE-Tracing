@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+#adminmenu .wp-menu-image img {
+  opacity: 1 !important;
+}
+
 .alert {
   display: flex;
   align-items: center;
@@ -77,8 +81,10 @@ h3 {
 
 .package-info .package-header .package-detail > div {
   flex: 3;
-  border-left: 3px solid #c3c4c7;
-  padding-left: 15px;
+  border: 1px solid #dadada;
+  border-left: 3.5px solid #a6ca7d;
+  padding: 15px;
+  margin: 0.6rem;
 }
 
 .package-info .package-header .package-detail > div > * {

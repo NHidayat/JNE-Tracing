@@ -30,7 +30,14 @@ class Jne_Tracing_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-
+		self::app_drop_jne_tracing_api_db();		
 	}
 
+	protected static function app_drop_jne_tracing_api_db() {
+		global $wpdb;
+
+		$wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}jne_tracing_api");
+		delete_option('db_jne_tracing_api_version');
+	
+	}
 }
